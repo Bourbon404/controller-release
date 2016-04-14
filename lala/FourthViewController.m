@@ -40,8 +40,9 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.delegate doSomeThing];
-    [self removeFromParentViewController];
-    [self.view removeFromSuperview];
+//    [self removeFromParentViewController];
+//    [self.view removeFromSuperview];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)dealloc
 {
