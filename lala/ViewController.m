@@ -52,13 +52,16 @@
     //不在回调方法里面释放该对象就不会释放
 //    [self addChildViewController:self.fourth];
 //    [self.view addSubview:self.fourth.view];
-    [self.navigationController pushViewController:self.fourth animated:YES];
+//    [self.navigationController pushViewController:self.fourth animated:YES];
+    FourthViewController *vc = [[FourthViewController alloc] init];
+    [vc setDelegate:self];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 -(FourthViewController *)fourth
 {
     if (!_fourth) {
         _fourth = [[FourthViewController alloc] init];
-        [_fourth setDelegate:self];
+//        [_fourth setDelegate:self];
         _fourth.view.frame = self.view.bounds;
     }
     return _fourth;
