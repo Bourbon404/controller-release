@@ -11,6 +11,9 @@
 #import "ThirdViewController.h"
 #import "FourthViewController.h"
 @interface ViewController ()<FourthViewControllerDelegate>
+{
+    SecondViewController *second;
+}
 @property (nonatomic,strong) FourthViewController *fourth;
 @end
 
@@ -28,15 +31,15 @@
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-//    [self functoinOne];
+    [self functoinOne];
 //    [self functionTwo];
-    [self functionThree];
+//    [self functionThree];
 }
 
 -(void)functoinOne
 {
     //会释放
-    SecondViewController *second = [[SecondViewController alloc] init];
+    second = [[SecondViewController alloc] init];
     [self.navigationController pushViewController:second animated:YES];
 }
 -(void)functionTwo
